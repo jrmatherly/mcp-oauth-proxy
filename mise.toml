@@ -1,0 +1,77 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+# mcp-oauth-proxy - OAuth 2.1 Proxy for MCP Servers
+# Inherits: go, golangci-lint from root
+#
+# Usage:
+#   mise :test           - Run all tests
+#   mise :test-short     - Run fast unit tests
+#   mise :build          - Build binary
+#   mise :demo           - Run SQLite demo
+
+[env]
+PROJECT_NAME = "mcp-oauth-proxy"
+
+[tasks.build]
+description = "Build binary"
+run = "go build -o bin/mcp-oauth-proxy"
+sources = ["**/*.go", "go.mod", "go.sum"]
+outputs = ["bin/mcp-oauth-proxy"]
+
+[tasks.test]
+description = "Run all tests"
+run = "go test ./..."
+
+[tasks.test-short]
+description = "Run fast unit tests"
+run = "go test -short ./..."
+
+[tasks.test-race]
+description = "Run tests with race detector"
+run = "go test -race ./..."
+
+[tasks.test-cover]
+description = "Generate coverage report"
+run = "go test -coverprofile=coverage.out ./... && go tool cover -html=coverage.out -o coverage.html"
+outputs = ["coverage.out", "coverage.html"]
+
+[tasks.lint]
+alias = "validate"
+description = "Run linters"
+run = "golangci-lint run"
+
+[tasks.tidy]
+description = "Tidy modules"
+run = "go mod tidy"
+
+[tasks.fmt]
+description = "Format code"
+run = "go fmt ./..."
+
+[tasks.vet]
+description = "Run go vet"
+run = "go vet ./..."
+
+[tasks.validate-ci]
+description = "CI validation"
+run = """
+go mod tidy
+go fmt ./...
+golangci-lint run
+if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
+    echo "Dirty repo!"
+    exit 1
+fi
+"""
+
+[tasks.ci]
+description = "Full CI pipeline"
+run = """
+go fmt ./...
+go vet ./...
+golangci-lint run
+go test ./...
+"""
+
+[tasks.demo]
+description = "Run SQLite demo"
+run = "./demo_sqlite.sh"
