@@ -195,14 +195,14 @@ You can now test your setup by using vscode MCP.
 }
 ```
 
-4. **Authentication Flow**:
+1. **Authentication Flow**:
 
 - When VSCode first connects, it will open a browser for OAuth authentication
 - Sign in with your Google account
 - Grant the requested permissions
 - VSCode will receive the access token and can now communicate with the Gmail MCP server
 
-5. **Test the Connection**:
+1. **Test the Connection**:
 
 - Open copilot panel in vscode
 - prompt to get the list of emails
