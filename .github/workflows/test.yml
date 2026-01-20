@@ -71,7 +71,7 @@ jobs:
         run: go tool cover -html=coverage-postgres.out -o coverage-postgres.html
 
       - name: Upload coverage to Codecov (PostgreSQL)
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           file: ./coverage-postgres.out
           flags: postgres-tests
@@ -124,7 +124,7 @@ jobs:
         run: go tool cover -html=coverage-sqlite.out -o coverage-sqlite.html
 
       - name: Upload coverage to Codecov (SQLite)
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           file: ./coverage-sqlite.out
           flags: sqlite-tests
