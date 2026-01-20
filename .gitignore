@@ -513,3 +513,6 @@ Pipfile*
 .kiro/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,terraform,go,python,windows,ansible,virtualenv,node
+
+# Auto Claude data directory
+.auto-claude/
