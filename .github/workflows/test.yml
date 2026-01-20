@@ -79,7 +79,7 @@ jobs:
           fail_ci_if_error: false
 
       - name: Upload coverage report as artifact (PostgreSQL)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: coverage-report-postgres
           path: coverage-postgres.html
@@ -132,7 +132,7 @@ jobs:
           fail_ci_if_error: false
 
       - name: Upload coverage report as artifact (SQLite)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: coverage-report-sqlite
           path: coverage-sqlite.html

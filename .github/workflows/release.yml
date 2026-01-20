@@ -118,7 +118,7 @@ jobs:
             .
 
       - name: Upload binary artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: binary-${{ matrix.name }}
           path: dist/
@@ -166,7 +166,7 @@ jobs:
             .
 
       - name: Upload binary artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: binary-${{ matrix.name }}
           path: dist/
@@ -182,7 +182,7 @@ jobs:
           echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
       - name: Download macOS binaries
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           pattern: binary-darwin-*
           path: ./binaries/
@@ -205,7 +205,7 @@ jobs:
             -output "dist/mcp-oauth-proxy-darwin-universal"
 
       - name: Upload universal binary artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: binary-darwin-universal
           path: dist/
@@ -275,7 +275,7 @@ jobs:
           echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
       - name: Download all artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           pattern: binary-*
           path: ./artifacts/
