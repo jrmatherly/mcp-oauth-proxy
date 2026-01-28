@@ -5,7 +5,7 @@ go 1.25.0
 require (
 	github.com/MicahParks/keyfunc/v3 v3.7.0
 	github.com/glebarez/sqlite v1.11.0
-	github.com/golang-jwt/jwt/v5 v5.3.0
+	github.com/golang-jwt/jwt/v5 v5.3.1
 	github.com/gorilla/handlers v1.5.2
 	github.com/gptscript-ai/cmd v0.0.0-20250530150401-bc71fddf8070
 	github.com/spf13/cobra v1.10.2
