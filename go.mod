@@ -7,7 +7,7 @@ require (
 	github.com/glebarez/sqlite v1.11.0
 	github.com/golang-jwt/jwt/v5 v5.3.0
 	github.com/gorilla/handlers v1.5.2
-	github.com/gptscript-ai/cmd v0.0.0-20250530150401-bc71fddf8070
+	github.com/gptscript-ai/cmd v0.0.0-20260729144516-2d3c9c953ff3
 	github.com/spf13/cobra v1.10.2
 	github.com/stretchr/testify v1.10.0
 	golang.org/x/oauth2 v0.34.0
